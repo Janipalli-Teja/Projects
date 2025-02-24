@@ -1,0 +1,25 @@
+using summary tag to get the completed tasks in it.
+
+event.preventDefault(); stops the default action
+
+ DOM Traversal (parentElement)
+
+ex:-
+
+<div class="tasks">
+    <p id="task1">Buy Groceries</p>
+</div>
+
+let task = document.getElementById("task1");
+console.log(task.parentElement); // Outputs: <div class="tasks">
+
+
+display:flex;
+3:1
+
+Date(); ---class having present time and date
+get.Day() -- returns number 0-6
+get.Date() --return todays date
+get.Year() -- returns present year
+get.Month() --return number from 0-11
+

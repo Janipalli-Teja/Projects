@@ -1,0 +1,97 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 30px;
+    /* border: 1px solid black; */
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgb(117, 61, 138);
+    color: black;
+}
+h1{
+    color: rgb(255, 153, 0);
+    text-shadow:2px 2px black;
+    font-size: xxx-large;
+}
+.dis_date {
+    width: 100%;
+}
+
+.tasks,
+.completed-tasks {
+    margin-top: 15px;
+}
+
+.dis_date {
+    text-align: center;
+}
+
+#day {
+    text-align: center;
+
+    background-color: #fffbe0;
+}
+
+p {
+    width: 100%;
+    background-color: #eee4a3;
+    margin: 5px;
+    height: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: large;
+    padding: 12px;
+    border-radius: 5px;
+    
+}
+
+h2 {
+    padding: 12px;
+    border-radius: 5px;
+    margin: 5px;
+    height: 38px;
+    width: 100%;
+    background-color: #fff;
+}
+
+summary {
+    list-style: none;
+    /* Removes default marker in some browsers */
+}
+details p{
+    text-decoration: line-through;
+}
+#taskform{
+    display: flex;
+    width: 100%;
+}
+
+
+input{
+    flex:3;
+    margin: 5px;
+    height: 33px;
+    font-size: large;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+button{
+    margin: 5px;
+    flex:1;
+    margin: 5px;
+    padding: 12px;
+    height: auto;
+    font-size: large;
+    border-radius: 5px;
+    border:none;
+
+}
