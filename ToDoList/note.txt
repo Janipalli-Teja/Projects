@@ -23,3 +23,53 @@ get.Date() --return todays date
 get.Year() -- returns present year
 get.Month() --return number from 0-11
 
+Coordinated Universal Time or Universal Time Coordinated (UTC)
+
+What is UTC time in India?
+India uses UTC+5:30, referred to as Asia/Kolkata
+
+
+Date() -object
+
+Date-Time arguments
+    passing through numbers
+        // Date(year,month,day,hour,minute,sec,milli sec)
+        const date=new Date(2005,7,9,10,10,10);
+        console.log(date);               //Tue Aug 09 2005 10:10:10 GMT+0530 (India Standard Time)
+
+    passing through string
+        const date=new Date("2005-08-09T04:30:00Z");  //UTC=IST-5:30hrs
+        console.log(date);               //Tue Aug 09 2005 10:10:10 GMT+0530 (India Standard Time)
+
+        const mybirthday=new Date("2005-08-09T04:30:00Z");
+        console.log(mybirthday);        //Tue Aug 09 2005 10:10:10 GMT+0530 (India Standard Time)
+
+Epoch -- the day where time started 
+by computer the Epoch is 1970  jan 01 12:00 AM
+
+
+get methods
+
+        const date=new Date();  
+        console.log(date.getDay());
+        console.log(date.getDate());
+        console.log(date.getMonth());
+        console.log(date.getFullYear());
+        console.log(date.getTime());
+        console.log("");
+        console.log(date.getHours());
+        console.log(date.getSeconds());
+        console.log(date.getMilliseconds());
+        
+
+set methods 
+        const mybirthday=new Date();
+        mybirthday.setDate(9);
+        mybirthday.setMonth(7);
+        mybirthday.setFullYear(2005);
+        mybirthday.setHours(10);
+        mybirthday.setMinutes(10);
+        mybirthday.setSeconds(10);
+        mybirthday.setMilliseconds(10);
+        console.log(mybirthday);  Tue Aug 09 2005 10:10:10 GMT+0530 (India Standard Time)
+
