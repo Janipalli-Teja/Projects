@@ -10,8 +10,10 @@
 
 <body>
     <p id="timer-display">00:00:00</p>
-    <button id="btn">Start</button>
-    <button id="rst">Reset</button>
+    <div class="button-container">
+        <button id="btn">Start</button>
+        <button id="rst">Reset</button>
+    </div>
     <script>
         let seconds = 0;
         let interval = null;
@@ -27,29 +29,36 @@
             let sec = seconds % 60;
             let min = Math.floor((seconds % 3600) / 60);
             let hours = Math.floor(seconds / 3600);
-            timer.textContent = `${formatTime(hours)}:${formatTime(min)}:${formatTime(sec)}`;
+            let timeString=`${formatTime(hours)}:${formatTime(min)}:${formatTime(sec)}`
+            timer.textContent =timeString ;
+            document.title=timeString;
         }
 
 
         btn.addEventListener("click", function () {
             if (btn.textContent === "Start") {
                 btn.textContent = "Stop";
-                interval = setInterval(() => {
-                    seconds++;
-                    displayTime();
-                }, 1000);
+                if(!interval){
+
+                    interval = setInterval(() => {
+                        seconds++;
+                        displayTime();
+                    }, 1000);
+                }
             }
             else {
                 btn.textContent = "Start";
                 clearInterval(interval)
+                interval=null;
             }
         });
-        let rst=document.getElementById("rst");
-        rst.addEventListener("click",function(){
+        let rst = document.getElementById("rst");
+        rst.addEventListener("click", function () {
             clearInterval(interval);
-            seconds=0;
+            interval=null;
+            seconds = 0;
             displayTime();
-            btn.textContent="Start";
+            btn.textContent = "Start";
         })
     </script>
 </body>
