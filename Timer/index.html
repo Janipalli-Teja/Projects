@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer..</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p id="timer-display">00:00:00</p>
+    <button id="btn">Start</button>
+    <button id="rst">Reset</button>
+    <script>
+        let seconds = 0;
+        let interval = null;
+        let timer = document.getElementById("timer-display");
+
+        let btn = document.getElementById("btn");
+
+        function formatTime(s) {
+            return s < 10 ? `0${s}` : s;
+        }
+
+        function displayTime() {
+            let sec = seconds % 60;
+            let min = Math.floor((seconds % 3600) / 60);
+            let hours = Math.floor(seconds / 3600);
+            timer.textContent = `${formatTime(hours)}:${formatTime(min)}:${formatTime(sec)}`;
+        }
+
+
+        btn.addEventListener("click", function () {
+            if (btn.textContent === "Start") {
+                btn.textContent = "Stop";
+                interval = setInterval(() => {
+                    seconds++;
+                    displayTime();
+                }, 1000);
+            }
+            else {
+                btn.textContent = "Start";
+                clearInterval(interval)
+            }
+        });
+        let rst=document.getElementById("rst");
+        rst.addEventListener("click",function(){
+            clearInterval(interval);
+            seconds=0;
+            displayTime();
+            btn.textContent="Start";
+        })
+    </script>
+</body>
+
+</html>
